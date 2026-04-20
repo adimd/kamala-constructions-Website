@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kamala Constructions, We Make Tomorrow</title>
+<meta name="description" content="Kamala Constructions is a Mangalore based civil contracting firm. We execute road works, pipelines, drainage, STPs and renovation projects as a subcontractor to leading construction companies across Dakshina Kannada.">
+<link rel="icon" href="images/KC_Logo.png" type="image/png">
+
+<!-- Fonts: Lora (warm serif) and Inter (clean body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+  --bg: #faf7f2;
+  --bg-soft: #f4ede3;
+  --bg-card: #ffffff;
+  --line: #e8ddc9;
+  --line-soft: #efe7d5;
+
+  --text: #2a2620;
+  --text-soft: #5a5348;
+  --text-muted: #8a8478;
+
+  --accent: #b8632a;
+  --accent-soft: #d48a52;
+  --accent-pale: #f5e6d8;
+
+  --green: #4a5d3a;
+
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --max: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--accent-pale); color: var(--text); }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.eyebrow::before { content: ''; width: 1.5rem; height: 1px; background: var(--accent); }
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1rem var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.header.scrolled { border-bottom-color: var(--line); background: rgba(250, 247, 242, 0.96); }
+
+.logo { display: flex; align-items: center; gap: 0.85rem; color: var(--text); }
+.logo img { width: 48px; height: 48px; object-fit: contain; }
+.logo-text { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; line-height: 1.1; }
+.logo-text small { display: block; font-family: var(--font-body); font-size: 0.7rem; color: var(--text-muted); font-weight: 400; margin-top: 3px; font-style: italic; }
+
+.navbar { display: flex; gap: 2rem; align-items: center; }
+.navbar a { font-size: 0.9rem; font-weight: 500; color: var(--text-soft); transition: color 0.2s ease; }
+.navbar a:hover { color: var(--accent); }
+.navbar a.cta { background: var(--accent); color: #fff; padding: 0.65rem 1.25rem; border-radius: 6px; transition: background 0.2s ease; }
+.navbar a.cta:hover { background: #a0561e; color: #fff; }
+
+.menu-btn { display: none; width: 40px; height: 40px; color: var(--text); font-size: 1.2rem; }
+
+/* HERO */
+.hero {
+  min-height: 92vh;
+  position: relative;
+  padding: 8rem var(--gutter) 5rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 30%, rgba(184, 99, 42, 0.08), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(74, 93, 58, 0.06), transparent 70%),
+    var(--bg);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--line-soft) 1px, transparent 1px);
+  background-size: 100% 60px;
+  opacity: 0.4;
+  mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+  pointer-events: none;
+}
+
+.hero-inner { max-width: var(--max); width: 100%; margin: 0 auto; position: relative; z-index: 2; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+.hero-content .eyebrow { margin-bottom: 1.5rem; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 1.75rem; color: var(--text); }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
+.hero-lede { max-width: 520px; font-size: 1.08rem; color: var(--text-soft); line-height: 1.7; margin-bottom: 2.5rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn { padding: 0.95rem 1.75rem; font-family: var(--font-body); font-weight: 500; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.65rem; transition: all 0.25s ease; border-radius: 6px; border: 1px solid transparent; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #a0561e; transform: translateY(-1px); }
+.btn-outline { border-color: var(--line); color: var(--text); background: var(--bg-card); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Hero visual: rolling project showcase */
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  max-width: 480px;
+  margin-left: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -20px rgba(90, 71, 40, 0.15);
+}
+
+.showcase-slides {
+  position: absolute;
+  inset: 0;
+}
+.showcase-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s linear 1s;
+}
+.showcase-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease, visibility 0s linear 0s;
+}
+
+.slide-image {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.slide-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(42, 38, 32, 0.9) 0%, rgba(42, 38, 32, 0.4) 45%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Unique placeholder per slide so rotation is visible even without images */
+.slide-image.no-img-1 { background: linear-gradient(135deg, #b8632a 0%, #8a4a1f 100%); }
+.slide-image.no-img-2 { background: linear-gradient(135deg, #4a5d3a 0%, #2f3d25 100%); }
+.slide-image.no-img-3 { background: linear-gradient(135deg, #7a5c3a 0%, #5a4228 100%); }
+.slide-image.no-img-4 { background: linear-gradient(135deg, #a0561e 0%, #6d3c15 100%); }
+.slide-image.no-img-5 { background: linear-gradient(135deg, #5a6d4a 0%, #3a4a30 100%); }
+.slide-image.no-img-6 { background: linear-gradient(135deg, #8a6d3a 0%, #5a4628 100%); }
+
+.slide-image .placeholder-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 4rem;
+  z-index: 0;
+}
+.slide-image img {
+  position: relative;
+  z-index: 1;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.75rem;
+  color: #fff;
+  z-index: 2;
+}
+.slide-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent);
+  padding: 0.3rem 0.7rem;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+.slide-caption h4 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+.slide-meta {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+}
+
+/* Progress indicators */
+.showcase-dots {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  gap: 0.4rem;
+  z-index: 3;
+}
+.showcase-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+.showcase-dot.active {
+  background: #fff;
+  width: 26px;
+  border-radius: 4px;
+}
+
+.showcase-counter {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 3;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #fff;
+  background: rgba(42, 38, 32, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+}
+
+/* SECTION BASICS */
+section { padding: 6.5rem var(--gutter); position: relative; }
+.section-inner { max-width: var(--max); margin: 0 auto; }
+
+.section-header { max-width: 720px; margin: 0 auto 4rem; text-align: center; }
+.section-header .eyebrow { justify-content: center; margin-bottom: 1.25rem; }
+.section-header .eyebrow::before, .section-header .eyebrow::after { content: ''; width: 1.5rem; height: 1px; background: var(--accent); }
+.section-header .eyebrow::after { margin-left: 0.6rem; }
+.section-header h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 1rem; color: var(--text); }
+.section-header h2 em { font-style: italic; color: var(--accent); }
+.section-header p { color: var(--text-soft); font-size: 1.05rem; line-height: 1.7; max-width: 580px; margin: 0 auto; }
+
+/* ABOUT */
+.about { background: var(--bg); }
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+.about-text h3 { font-family: var(--font-display); font-size: clamp(1.6rem, 2.8vw, 2.1rem); font-weight: 500; line-height: 1.3; margin-bottom: 1.5rem; color: var(--text); }
+.about-text h3 em { font-style: italic; color: var(--accent); }
+.about-text p { color: var(--text-soft); margin-bottom: 1.25rem; font-size: 1.02rem; line-height: 1.75; }
+.about-text p strong { color: var(--text); font-weight: 600; }
+
+.about-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; padding: 2.5rem; box-shadow: 0 10px 30px -15px rgba(90, 71, 40, 0.1); }
+.about-card h4 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text); }
+.about-card .sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.about-card ul { list-style: none; }
+.about-card li { display: flex; align-items: flex-start; gap: 0.85rem; padding: 0.75rem 0; font-size: 0.95rem; color: var(--text-soft); }
+.about-card li i { color: var(--green); font-size: 0.85rem; margin-top: 0.35rem; flex-shrink: 0; }
+
+/* STATS */
+.stats { margin-top: 5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.stat-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 10px; padding: 2rem 1.5rem; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease; }
+.stat-card:hover { transform: translateY(-3px); border-color: var(--accent-soft); }
+.stat-card .num { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 600; color: var(--accent); line-height: 1; }
+.stat-card .num sup { font-size: 0.5em; color: var(--text-soft); margin-left: 0.15rem; }
+.stat-card .label { font-size: 0.85rem; color: var(--text-soft); margin-top: 0.75rem; }
+
+/* SERVICES */
+.services { background: var(--bg-soft); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.service { background: var(--bg-card); border: 1px solid var(--line); border-radius: 10px; padding: 2rem; transition: all 0.3s ease; display: flex; flex-direction: column; gap: 1rem; }
+.service:hover { transform: translateY(-3px); border-color: var(--accent-soft); box-shadow: 0 15px 35px -15px rgba(184, 99, 42, 0.15); }
+.service-icon { width: 48px; height: 48px; background: var(--accent-pale); color: var(--accent); border-radius: 8px; display: grid; place-items: center; font-size: 1.1rem; }
+.service h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; line-height: 1.25; color: var(--text); }
+.service p { color: var(--text-soft); font-size: 0.95rem; line-height: 1.6; }
+
+/* FEATURED PROJECT (video) */
+.featured { background: var(--bg); }
+.featured-inner { max-width: var(--max); margin: 0 auto; }
+.featured-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 2.5rem; }
+.featured-header .left h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; color: var(--text); margin-top: 1rem; }
+.featured-header .left h2 em { font-style: italic; color: var(--accent); }
+.featured-header .right p { color: var(--text-soft); font-size: 1.02rem; line-height: 1.7; }
+.featured-header .right .project-meta { margin-top: 1.25rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.featured-header .right .project-meta div { font-size: 0.85rem; color: var(--text-muted); }
+.featured-header .right .project-meta div strong { display: block; color: var(--text); font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; margin-top: 0.15rem; }
+
+.featured-media {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  position: relative;
+  box-shadow: 0 20px 50px -20px rgba(90, 71, 40, 0.15);
+}
+.featured-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.featured-media .media-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(184, 99, 42, 0.03) 20px, rgba(184, 99, 42, 0.03) 21px),
+    var(--bg-soft);
+}
+.featured-media .media-placeholder i { font-size: 2.5rem; color: var(--accent-soft); }
+.featured-media .media-placeholder span { font-size: 0.9rem; font-style: italic; }
+.featured-media .media-placeholder small { font-size: 0.75rem; color: var(--text-muted); }
+
+/* PROJECTS */
+.projects { background: var(--bg); }
+.project-filter { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap; }
+.filter-btn { padding: 0.55rem 1.15rem; font-size: 0.85rem; color: var(--text-soft); background: var(--bg-card); border: 1px solid var(--line); border-radius: 100px; transition: all 0.2s ease; font-weight: 500; }
+.filter-btn:hover { color: var(--accent); border-color: var(--accent-soft); }
+.filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.project-card:hover {
+  border-color: var(--accent-soft);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -20px rgba(184, 99, 42, 0.15);
+}
+.project-image {
+  aspect-ratio: 4/3;
+  background: var(--bg-soft);
+  position: relative;
+  overflow: hidden;
+}
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.project-card:hover .project-image img { transform: scale(1.04); }
+
+.project-image .image-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-soft);
+  font-size: 2rem;
+  background: repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(184, 99, 42, 0.04) 12px, rgba(184, 99, 42, 0.04) 13px);
+}
+
+.project-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+.project-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.project-client { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+.project-tag { font-size: 0.72rem; color: var(--accent); background: var(--accent-pale); padding: 0.3rem 0.7rem; border-radius: 100px; font-weight: 500; }
+.project-tag.ongoing { color: var(--green); background: rgba(74, 93, 58, 0.1); }
+.project-tag.ongoing::before { content: '●'; margin-right: 0.35rem; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.project-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; line-height: 1.3; color: var(--text); }
+.project-card p { color: var(--text-soft); font-size: 0.92rem; line-height: 1.6; }
+
+/* CLIENTS */
+.clients { background: var(--bg-soft); }
+.clients-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 920px; margin: 0 auto; }
+
+.client-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; padding: 2.5rem; transition: all 0.3s ease; display: flex; flex-direction: column; gap: 1rem; }
+.client-card:hover { border-color: var(--accent-soft); transform: translateY(-3px); box-shadow: 0 20px 40px -20px rgba(184, 99, 42, 0.12); }
+.client-card .label { font-size: 0.72rem; font-weight: 500; color: var(--green); background: rgba(74, 93, 58, 0.1); padding: 0.3rem 0.7rem; border-radius: 100px; display: inline-block; align-self: flex-start; letter-spacing: 0.02em; }
+.client-card h4 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--text); }
+.client-card p { color: var(--text-soft); font-size: 0.98rem; line-height: 1.65; flex: 1; }
+.client-card a { font-size: 0.9rem; color: var(--accent); font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s ease; align-self: flex-start; padding-top: 0.5rem; }
+.client-card a:hover { gap: 0.7rem; }
+
+/* CONTACT */
+.contact { background: var(--bg); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px -20px rgba(90, 71, 40, 0.12); }
+.contact-info { padding: 3rem; }
+.contact-info h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 500; margin-bottom: 2rem; color: var(--text); }
+
+.contact-item { padding: 1.1rem 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 36px 1fr; gap: 1rem; align-items: start; }
+.contact-item:last-of-type { border-bottom: none; }
+.contact-item i { color: var(--accent); font-size: 0.95rem; margin-top: 0.25rem; width: 36px; height: 36px; background: var(--accent-pale); border-radius: 50%; display: grid; place-items: center; }
+.contact-item .label { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+.contact-item .value { color: var(--text); font-size: 0.98rem; line-height: 1.5; }
+.contact-item a { transition: color 0.2s ease; }
+.contact-item a:hover { color: var(--accent); }
+
+.contact-proprietor { margin-top: 2rem; padding: 1.25rem 1.5rem; background: var(--bg-soft); border-radius: 8px; border-left: 3px solid var(--accent); }
+.contact-proprietor .label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.contact-proprietor .name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; color: var(--text); }
+
+.contact-map { position: relative; min-height: 500px; }
+.contact-map iframe { width: 100%; height: 100%; border: none; position: absolute; inset: 0; }
+
+/* FOOTER */
+.footer { background: var(--bg-soft); border-top: 1px solid var(--line); padding: 2.5rem var(--gutter); }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem; }
+.footer-brand { display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-display); font-size: 1.05rem; color: var(--text); }
+.footer-brand img { width: 36px; height: 36px; object-fit: contain; }
+.footer-brand em { font-style: italic; color: var(--accent); font-size: 0.85rem; display: block; margin-top: 2px; }
+.footer-credit { font-size: 0.85rem; color: var(--text-muted); }
+.footer-social { display: flex; gap: 0.75rem; }
+.footer-social a { width: 40px; height: 40px; background: var(--bg-card); border: 1px solid var(--line); border-radius: 50%; display: grid; place-items: center; color: var(--text-soft); transition: all 0.2s ease; }
+.footer-social a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-visual { margin: 0 auto; max-width: 420px; }
+  .about-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .featured-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-map { min-height: 380px; }
+}
+
+@media (max-width: 768px) {
+  .navbar { display: none; }
+  .menu-btn { display: grid; place-items: center; }
+  .navbar.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-card); border-bottom: 1px solid var(--line); padding: 1.5rem var(--gutter); gap: 1.25rem; align-items: flex-start; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+  .navbar.active a.cta { align-self: stretch; text-align: center; }
+  section { padding: 4.5rem var(--gutter); }
+  .hero { padding: 7rem var(--gutter) 3rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .clients-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
+  .contact-info { padding: 2rem; }
+  .footer-inner { flex-direction: column; text-align: center; justify-content: center; }
+  .footer-brand { justify-content: center; }
+}
+
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.hero-content, .hero-visual { opacity: 0; animation: rise 0.9s ease forwards; }
+.hero-visual { animation-delay: 0.2s; }
+@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+
+<body>
+
+<header class="header" id="header">
+  <a href="#home" class="logo">
+    <img src="images/KC_Logo.png" alt="Kamala Constructions logo">
+    <span class="logo-text">
+      Kamala Constructions
+      <small>We Make Tomorrow</small>
+    </span>
+  </a>
+  <nav class="navbar" id="navbar">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#clients">Clients</a>
+    <a href="#contact" class="cta">Contact</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu">
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="eyebrow">Civil Contractors, Mangalore</span>
+      <h1>We Make <em>Tomorrow.</em><br>One project at a time.</h1>
+      <p class="hero-lede">
+        Kamala Constructions is a Mangalore based civil contracting firm. We execute road works, pipelines, drainage, sewage treatment plants and renovations as a subcontractor to leading construction companies working across Dakshina Kannada.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          See our work <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
+
+    <aside class="hero-visual">
+      <span class="showcase-counter" id="showcaseCounter">01 of 06</span>
+      <div class="showcase-dots" id="showcaseDots">
+        <button class="showcase-dot active" data-index="0" aria-label="Project 1"></button>
+        <button class="showcase-dot" data-index="1" aria-label="Project 2"></button>
+        <button class="showcase-dot" data-index="2" aria-label="Project 3"></button>
+        <button class="showcase-dot" data-index="3" aria-label="Project 4"></button>
+        <button class="showcase-dot" data-index="4" aria-label="Project 5"></button>
+        <button class="showcase-dot" data-index="5" aria-label="Project 6"></button>
+      </div>
+      <div class="showcase-slides">
+
+        <div class="showcase-slide active">
+          <div class="slide-image no-img-1">
+            <img src="images/project-smartcity.jpg" alt="Smart City Waterfront Promenade" onerror="this.style.display='none'">
+            <i class="fas fa-hard-hat placeholder-icon"></i>
+          </div>
+          <div class="slide-caption">
+            <span class="slide-tag">Smart City</span>
+            <h4>Smart City Waterfront Promenade</h4>
+            <div class="slide-meta">Mangalore Smart City Mission</div>
+          </div>
+        </div>
+
+        <div class="showcase-slide">
+          <div class="slide-image no-img-2">
+            <img src="images/project-mvs.jpg" alt="Multi Village Pipeline" onerror="this.style.display='none'">
+            <i class="fas fa-hard-hat placeholder-icon"></i>
+          </div>
+          <div class="slide-caption">
+            <span class="slide-tag">Government</span>
+            <h4>Multi Village Pipeline</h4>
+            <div class="slide-meta">Puttur, Moodabidre, Belthangady</div>
+          </div>
+        </div>
+
+        <div class="showcase-slide">
+          <div class="slide-image no-img-3">
+            <img src="images/project-stp-kateel.jpg" alt="STP Tank at Kateel" onerror="this.style.display='none'">
+            <i class="fas fa-hard-hat placeholder-icon"></i>
+          </div>
+          <div class="slide-caption">
+            <span class="slide-tag">300 KLD</span>
+            <h4>STP Tank, Kateel Temple</h4>
+            <div class="slide-meta">Kateel Durgaparameshwari Temple</div>
+          </div>
+        </div>
+
+        <div class="showcase-slide">
+          <div class="slide-image no-img-4">
+            <img src="images/project-mulki.jpg" alt="Lokamukhi Karyalaya Mulki" onerror="this.style.display='none'">
+            <i class="fas fa-hard-hat placeholder-icon"></i>
+          </div>
+          <div class="slide-caption">
+            <span class="slide-tag">Ongoing</span>
+            <h4>Lokamukhi Karyalaya</h4>
+            <div class="slide-meta">Community Hall, Mulki</div>
+          </div>
+        </div>
+
+        <div class="showcase-slide">
+          <div class="slide-image no-img-5">
+            <img src="images/project-annachatra.jpg" alt="Retaining Wall at Kateel" onerror="this.style.display='none'">
+            <i class="fas fa-hard-hat placeholder-icon"></i>
+          </div>
+          <div class="slide-caption">
+            <span class="slide-tag">Structural</span>
+            <h4>Retaining Wall, Annachatra</h4>
+            <div class="slide-meta">Kateel Temple</div>
+          </div>
+        </div>
+
+        <div class="showcase-slide">
+          <div class="slide-image no-img-6">
+            <img src="images/project-mugrody.jpg" alt="Mugrody Drainage and Road Work" onerror="this.style.display='none'">
+            <i class="fas fa-hard-hat placeholder-icon"></i>
+          </div>
+          <div class="slide-caption">
+            <span class="slide-tag">Community</span>
+            <h4>Mugrody Drainage and Road</h4>
+            <div class="slide-meta">Village Infrastructure</div>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">About Us</span>
+      <h2>We take the time to <em>build it right.</em></h2>
+      <p>We are a Mangalore based civil contracting firm, working as a subcontractor on public and private projects across the coastal region.</p>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <h3>Rooted in the coast. Built on <em>trust.</em></h3>
+        <p>
+          <strong>Kamala Constructions</strong> has been serving Dakshina Kannada since 2021. All of our work is carried out on a subcontracting basis for established construction companies. This lets us focus entirely on execution, which is what we do best.
+        </p>
+        <p>
+          We have delivered scope on Smart City walkways in Mangalore, Multi Village water supply pipelines across three taluks, sewage treatment plants and retaining walls at Kateel temple, foundation works at Kalasa, and a full residential renovation. Each job is handled with the same care, whether it is a 300 KLD STP or a community road.
+        </p>
+        <p>
+          We believe good work speaks for itself. No shortcuts. No tall claims. Just steady, thoughtful construction that holds up over time.
+        </p>
+      </div>
+
+      <div class="about-card reveal">
+        <h4>Why principal contractors choose us</h4>
+        <p class="sub">The things we bring to every site.</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Reliable on-ground execution of the full scope handed to us</li>
+          <li><i class="fas fa-check-circle"></i> Personal involvement from the proprietor on every project</li>
+          <li><i class="fas fa-check-circle"></i> Local knowledge of terrain, weather and materials</li>
+          <li><i class="fas fa-check-circle"></i> Experience with both government tenders and private builds</li>
+          <li><i class="fas fa-check-circle"></i> A trusted team of 50 plus skilled workers</li>
+          <li><i class="fas fa-check-circle"></i> Work that is finished, not just handed over</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card reveal">
+        <div class="num">12<sup>+</sup></div>
+        <div class="label">Projects completed</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="num">4<sup>+</sup></div>
+        <div class="label">Years on the ground</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="num">50<sup>+</sup></div>
+        <div class="label">Workers on our team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>The kind of work we <em>take on.</em></h2>
+      <p>A range of civil contracting capabilities that principal contractors hand to us with confidence.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service reveal">
+        <div class="service-icon"><i class="fas fa-road"></i></div>
+        <h3>Road Construction</h3>
+        <p>Durable road works for rural and urban stretches, built to handle local terrain and traffic.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><i class="fas fa-water"></i></div>
+        <h3>Pipeline Laying</h3>
+        <p>Water supply lines, sewage mains and utility pipelines. Trenching, laying and testing carried out end to end.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><i class="fas fa-recycle"></i></div>
+        <h3>STP & Drainage</h3>
+        <p>Sewage treatment plants and drainage systems for temples, institutions and local communities.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><i class="fas fa-cubes"></i></div>
+        <h3>Foundation & Earthworks</h3>
+        <p>Site preparation, excavation, retaining walls and foundations for homes and institutional buildings.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><i class="fas fa-city"></i></div>
+        <h3>Public Infrastructure</h3>
+        <p>Walkways, cycle tracks, interlock paving and community halls that serve people every day.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><i class="fas fa-home"></i></div>
+        <h3>Home Renovation</h3>
+        <p>Complete renovation work including plumbing, electrical, flooring, painting and refurbishment for older homes.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+        <h3>Structural Works</h3>
+        <p>Retaining walls, foundations and structural execution for safe, well engineered construction.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><i class="fas fa-clipboard-list"></i></div>
+        <h3>Project Consultation</h3>
+        <p>Advice on planning, estimation and on-site execution for government tenders and private builds.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><i class="fas fa-seedling"></i></div>
+        <h3>Landscaping</h3>
+        <p>Site beautification, interlock walkways and surroundings that integrate with the community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECT: SMART CITY WATERFRONT (video slot) -->
+<section class="featured">
+  <div class="featured-inner">
+    <div class="featured-header reveal">
+      <div class="left">
+        <span class="eyebrow">Featured Project</span>
+        <h2>Smart City Waterfront <em>Promenade.</em></h2>
+      </div>
+      <div class="right">
+        <p>A walkway and cycle track along the Mangalore waterfront, delivered under the Smart City mission. A public space meant for daily use by walkers, families and cyclists.</p>
+        <div class="project-meta">
+          <div>Scope<strong>Civil works, paving</strong></div>
+          <div>Type<strong>Public infrastructure</strong></div>
+          <div>Location<strong>Mangalore</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-media reveal">
+      <!-- 
+        TO ADD THE SMART CITY VIDEO:
+        Place your video file at: videos/smart-city.mp4
+        Then uncomment the <video> tag below and remove the placeholder div.
+      -->
+      <!--
+      <video src="videos/smart-city.mp4" autoplay muted loop playsinline poster="images/smart-city-poster.jpg"></video>
+      -->
+      <div class="media-placeholder">
+        <i class="fas fa-video"></i>
+        <span>Smart City Waterfront video</span>
+        <small>Place video at videos/smart-city.mp4</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Work</span>
+      <h2>Twelve projects delivered across <em>Dakshina Kannada.</em></h2>
+      <p>A quiet portfolio of civil work executed for established contractors. Temple infrastructure, government schemes, community roads and home renovations.</p>
+    </div>
+
+    <div class="project-filter reveal">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="public">Public Infrastructure</button>
+      <button class="filter-btn" data-filter="temple">Temple Works</button>
+      <button class="filter-btn" data-filter="pipeline">Pipelines & Drainage</button>
+      <button class="filter-btn" data-filter="road">Road Works</button>
+      <button class="filter-btn" data-filter="residential">Residential</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <div class="project-card reveal" data-cat="public">
+        <div class="project-image">
+          <img src="images/project-smartcity.jpg" alt="Smart City Waterfront Promenade" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">Mangalore Smart City</span>
+            <span class="project-tag">Smart City</span>
+          </div>
+          <h3>Smart City Waterfront Promenade</h3>
+          <p>A walkway and cycle track along the Mangalore waterfront, built for daily public use under the Smart City mission.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="pipeline">
+        <div class="project-image">
+          <img src="images/project-mvs.jpg" alt="Multi Village Scheme pipeline" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">Govt. of Karnataka</span>
+            <span class="project-tag">Government</span>
+          </div>
+          <h3>Multi Village Pipeline, Puttur, Moodabidre, Belthangady</h3>
+          <p>Pipeline laying under the Multi Village Scheme, bringing reliable water supply to rural communities across three taluks.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="temple">
+        <div class="project-image">
+          <img src="images/project-stp-kateel.jpg" alt="STP Tank at Kateel Temple" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">Kateel Temple</span>
+            <span class="project-tag">300 KLD</span>
+          </div>
+          <h3>STP Tank, Kateel Temple</h3>
+          <p>A 300 KLD sewage treatment plant built for Kateel Durgaparameshwari Temple, improving sanitation for devotees and surroundings.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="public">
+        <div class="project-image">
+          <img src="images/project-mulki.jpg" alt="Lokamukhi Karyalaya Mulki" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">RSS, Mulki</span>
+            <span class="project-tag ongoing">Ongoing</span>
+          </div>
+          <h3>Lokamukhi Karyalaya, Mulki</h3>
+          <p>A community hall currently being built for the RSS group in Mulki. Work is in active progress on site.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="temple">
+        <div class="project-image">
+          <img src="images/project-annachatra.jpg" alt="Retaining wall at Annachatra Kateel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">Kateel Temple</span>
+            <span class="project-tag">Structural</span>
+          </div>
+          <h3>Retaining Wall, Annachatra at Kateel</h3>
+          <p>A retaining wall built behind the Annachatra at Kateel, providing safety and structural support to the building.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="temple">
+        <div class="project-image">
+          <img src="images/project-interlock-kateel.jpg" alt="Interlock work at Kateel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">Kateel Temple</span>
+            <span class="project-tag">Public Use</span>
+          </div>
+          <h3>Interlock Work, Kateel</h3>
+          <p>Interlock paving for parking facilities at Kateel temple, built to comfortably serve the steady flow of devotees.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="pipeline">
+        <div class="project-image">
+          <img src="images/project-mugrody.jpg" alt="Mugrody drainage and road work" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">Local Panchayat</span>
+            <span class="project-tag">Community</span>
+          </div>
+          <h3>Mugrody Drainage & Road Work</h3>
+          <p>Drainage and road access for a locality of around 100 residents who previously had no basic civic infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="public">
+        <div class="project-image">
+          <img src="images/project-pumpwell.jpg" alt="Pumpwell Kalasa foundation work" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">Govt. Project</span>
+            <span class="project-tag">Foundation</span>
+          </div>
+          <h3>Pumpwell, Kalasa</h3>
+          <p>Foundation works for the pumpwell at Kalasa. Careful groundwork supporting essential water infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="road">
+        <div class="project-image">
+          <img src="images/project-kateel-road.jpg" alt="Kateel road work" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">PWD / Kateel</span>
+            <span class="project-tag">Road Works</span>
+          </div>
+          <h3>Kateel Road Work</h3>
+          <p>Road construction serving the Kateel temple corridor, improving access and surface quality for pilgrim traffic.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="road">
+        <div class="project-image">
+          <img src="images/project-adyapady.jpg" alt="Adyapady road work" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">PWD</span>
+            <span class="project-tag">Road Works</span>
+          </div>
+          <h3>Adyapady Road Work</h3>
+          <p>Road construction and surface works for the Adyapady area, improving connectivity for local residents.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="road">
+        <div class="project-image">
+          <img src="images/project-pera.jpg" alt="Pera road work" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">PWD</span>
+            <span class="project-tag">Road Works</span>
+          </div>
+          <h3>Pera Road Work</h3>
+          <p>Road works at Pera. Construction and surface finishing for better rural connectivity.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-cat="residential">
+        <div class="project-image">
+          <img src="images/project-rajavarshini.jpg" alt="Rajavarshini house renovation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder" style="display:none;"><i class="fas fa-image"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-client">Private Client</span>
+            <span class="project-tag">Home</span>
+          </div>
+          <h3>Rajavarshini House, Full Renovation</h3>
+          <p>Complete renovation of a 15 year old home. New utility pipelines, electrical, flooring, painting and thoughtful refurbishment throughout.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="clients" id="clients">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Clients</span>
+      <h2>The contractors who <em>trust us on site.</em></h2>
+      <p>All of our work is carried out as a subcontractor. We are proud to work with established construction firms in the region, delivering our scope with care and consistency.</p>
+    </div>
+
+    <div class="clients-grid">
+      <div class="client-card reveal">
+        <span class="label">Client</span>
+        <h4>Mugrody Constructions</h4>
+        <p>We take on civil scope on their infrastructure and development projects, working alongside their site teams to deliver completed work.</p>
+        <a href="https://mugrody.com/" target="_blank" rel="noopener">
+          Visit their site <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="client-card reveal">
+        <span class="label">Client</span>
+        <h4>SKS Constructions, Karkala</h4>
+        <p>We handle specialist civil and infrastructure scope across their ongoing projects, bringing local execution experience to their contracts.</p>
+        <a href="https://skskarkalainfra.com/" target="_blank" rel="noopener">
+          Visit their site <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Have a project <em>for us?</em></h2>
+      <p>If you are a contractor looking for a dependable civil partner on your next project, we would be glad to hear from you. Write to us or drop by our office.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <h3>Reach us</h3>
+
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:office@kamalaconstructions.com">office@kamalaconstructions.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fab fa-instagram"></i>
+          <div>
+            <div class="label">Instagram</div>
+            <div class="value"><a href="https://www.instagram.com/kamala_constructions_mng/" target="_blank" rel="noopener">@kamala_constructions_mng</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <div class="label">Office</div>
+            <div class="value">
+              2-69/2, Kamala, Mugrody,<br>
+              Padavinagady, Padavu, Konchady,<br>
+              Mangalore, Karnataka 575008, India
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-proprietor">
+          <div class="label">Proprietor</div>
+          <div class="name">Deekshith M Shetty</div>
+        </div>
+      </div>
+
+      <div class="contact-map">
+        <iframe src="https://maps.google.com/maps?q=Guru%20Nagar,%20Mangalore,%20Karnataka%20575008,%20India&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/KC_Logo.png" alt="Kamala Constructions">
+      <div>
+        Kamala Constructions
+        <em>We Make Tomorrow</em>
+      </div>
+    </div>
+    <div class="footer-credit">
+      © 2026 Kamala Constructions, Mangalore, Karnataka
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/kamala_constructions_mng/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:office@kamalaconstructions.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+});
+
+const menuBtn = document.getElementById('menuBtn');
+const navbar = document.getElementById('navbar');
+menuBtn?.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+  const icon = menuBtn.querySelector('i');
+  icon.className = navbar.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+});
+navbar?.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navbar.classList.remove('active');
+    const icon = menuBtn?.querySelector('i');
+    if (icon) icon.className = 'fas fa-bars';
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    projectCards.forEach(card => {
+      if (filter === 'all' || card.dataset.cat === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// ============================================
+// HERO PROJECT SHOWCASE (rolling banner)
+// ============================================
+(function() {
+  var slides = document.querySelectorAll('.showcase-slide');
+  var dots = document.querySelectorAll('.showcase-dot');
+  var counter = document.getElementById('showcaseCounter');
+
+  if (!slides.length) return;
+
+  var current = 0;
+  var timer = null;
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function show(i) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    if (counter) counter.textContent = pad(current + 1) + ' of ' + pad(slides.length);
+  }
+
+  function next() {
+    show((current + 1) % slides.length);
+  }
+
+  function start() {
+    stop();
+    timer = setInterval(next, 4000);
+  }
+
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  // Dot clicks
+  for (var i = 0; i < dots.length; i++) {
+    (function(idx) {
+      dots[idx].addEventListener('click', function() {
+        show(idx);
+        start();
+      });
+    })(i);
+  }
+
+  // Pause on hover
+  var card = document.querySelector('.hero-visual');
+  if (card) {
+    card.addEventListener('mouseenter', stop);
+    card.addEventListener('mouseleave', start);
+  }
+
+  start();
+})();
+</script>
+
+</body>
+</html>
