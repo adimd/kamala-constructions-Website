@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kamala Constructions, We Make Tomorrow</title>
-<meta name="description" content="Kamala Constructions is a Mangalore based civil contracting firm. We execute road works, pipelines, drainage, STPs and renovation projects as a subcontractor to leading construction companies across Dakshina Kannada.">
+<meta name="description" content="Kamala Constructions is a Mangalore based civil contracting firm delivering road works, pipelines, drainage, STPs and renovation projects across Dakshina Kannada, for government, private and industry partners.">
 <link rel="icon" href="images/KC_Logo.png" type="image/png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,30 +72,71 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(250, 247, 242, 0.85);
+  background: rgba(20, 16, 12, 0.35);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
 }
-.header.scrolled { border-bottom-color: var(--line); background: rgba(250, 247, 242, 0.96); }
+.header.scrolled {
+  background: rgba(250, 247, 242, 0.96);
+  border-bottom-color: var(--line);
+}
+.header.scrolled .logo { color: var(--text); }
+.header.scrolled .logo-text small { color: var(--text-muted); }
+.header.scrolled .navbar a { color: var(--text-soft); }
+.header.scrolled .navbar a:hover { color: var(--accent); }
+.header.scrolled .navbar a.cta { color: #fff; }
 
-.logo { display: flex; align-items: center; gap: 0.85rem; color: var(--text); }
-.logo img { width: 48px; height: 48px; object-fit: contain; }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+.header.scrolled .logo img { filter: none; }
 .logo-text { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; line-height: 1.1; }
-.logo-text small { display: block; font-family: var(--font-body); font-size: 0.7rem; color: var(--text-muted); font-weight: 400; margin-top: 3px; font-style: italic; }
+.logo-text small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  margin-top: 3px;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
 
 .navbar { display: flex; gap: 2rem; align-items: center; }
-.navbar a { font-size: 0.9rem; font-weight: 500; color: var(--text-soft); transition: color 0.2s ease; }
-.navbar a:hover { color: var(--accent); }
-.navbar a.cta { background: var(--accent); color: #fff; padding: 0.65rem 1.25rem; border-radius: 6px; transition: background 0.2s ease; }
-.navbar a.cta:hover { background: #a0561e; color: #fff; }
+.navbar a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+.navbar a:hover { color: #f0bd56; }
+.navbar a.cta {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.navbar a.cta:hover { background: #d48a52; color: #fff; }
 
 .menu-btn { display: none; width: 40px; height: 40px; color: var(--text); font-size: 1.2rem; }
 
 /* HERO */
 .hero {
-  min-height: 92vh;
+  min-height: 88vh;
   position: relative;
   padding: 8rem var(--gutter) 5rem;
   display: flex;
@@ -118,146 +159,81 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 2;
   max-width: var(--max);
   width: 100%;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  text-align: center;
 }
-.hero-content .eyebrow { margin-bottom: 1.5rem; }
-.hero h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 1.75rem; color: var(--text); }
-.hero h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
-.hero-lede { max-width: 520px; font-size: 1.08rem; color: var(--text-soft); line-height: 1.7; margin-bottom: 2.5rem; }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-.btn { padding: 0.95rem 1.75rem; font-family: var(--font-body); font-weight: 500; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.65rem; transition: all 0.25s ease; border-radius: 6px; border: 1px solid transparent; }
+.hero-content {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.hero .eyebrow {
+  margin-bottom: 1.75rem;
+  justify-content: center;
+}
+.hero .eyebrow::after {
+  content: '';
+  width: 1.5rem;
+  height: 1px;
+  background: var(--accent);
+  margin-left: 0.6rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+  color: var(--text);
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.hero-lede {
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.95rem 1.75rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  transition: all 0.25s ease;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: #a0561e; transform: translateY(-1px); }
-.btn-outline { border-color: var(--line); color: var(--text); background: var(--bg-card); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-
-/* ROLLING BANNER */
-.banner {
-  position: relative;
-  aspect-ratio: 4/5;
-  max-width: 480px;
-  margin-left: auto;
+.btn-outline {
+  border-color: var(--line);
+  color: var(--text);
   background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px -20px rgba(90, 71, 40, 0.15);
 }
-
-.banner-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 1s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.banner-slide.is-active { opacity: 1; z-index: 1; }
-
-/* Each slide has its own gradient background shown if image is missing */
-.banner-slide[data-slide="1"] { background: linear-gradient(135deg, #b8632a 0%, #8a4a1f 100%); }
-.banner-slide[data-slide="2"] { background: linear-gradient(135deg, #4a5d3a 0%, #2f3d25 100%); }
-.banner-slide[data-slide="3"] { background: linear-gradient(135deg, #7a5c3a 0%, #5a4228 100%); }
-.banner-slide[data-slide="4"] { background: linear-gradient(135deg, #a0561e 0%, #6d3c15 100%); }
-.banner-slide[data-slide="5"] { background: linear-gradient(135deg, #5a6d4a 0%, #3a4a30 100%); }
-.banner-slide[data-slide="6"] { background: linear-gradient(135deg, #8a6d3a 0%, #5a4628 100%); }
-
-.banner-slide img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.banner-slide::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(42, 38, 32, 0.9) 0%, rgba(42, 38, 32, 0.35) 45%, transparent 70%);
-  pointer-events: none;
-}
-
-.banner-slide .caption {
-  position: relative;
-  z-index: 2;
-  padding: 1.75rem;
-  color: #fff;
-}
-.banner-tag {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--accent);
-  padding: 0.3rem 0.7rem;
-  border-radius: 100px;
-  margin-bottom: 0.75rem;
-}
-.banner-slide h4 {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 1.25;
-  color: #fff;
-  margin-bottom: 0.35rem;
-}
-.banner-meta {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-style: italic;
-}
-
-.banner-dots {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  display: flex;
-  gap: 0.4rem;
-  z-index: 3;
-}
-.banner-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-  padding: 0;
-}
-.banner-dot.is-active {
-  background: #fff;
-  width: 26px;
-  border-radius: 4px;
-}
-
-.banner-counter {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  z-index: 3;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.85rem;
-  color: #fff;
-  background: rgba(42, 38, 32, 0.55);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  padding: 0.35rem 0.85rem;
-  border-radius: 100px;
-}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
 /* SECTIONS */
 section { padding: 6.5rem var(--gutter); position: relative; }
@@ -430,8 +406,6 @@ section { padding: 6.5rem var(--gutter); position: relative; }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .banner { margin: 0 auto; max-width: 420px; }
   .about-layout { grid-template-columns: 1fr; gap: 3rem; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
@@ -439,6 +413,7 @@ section { padding: 6.5rem var(--gutter); position: relative; }
   .featured-header { grid-template-columns: 1fr; gap: 1.5rem; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-map { min-height: 380px; }
+  .hero h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); }
 }
 
 @media (max-width: 768px) {
@@ -487,7 +462,7 @@ section { padding: 6.5rem var(--gutter); position: relative; }
       <span class="eyebrow">Civil Contractors, Mangalore</span>
       <h1>We Make <em>Tomorrow.</em><br>One project at a time.</h1>
       <p class="hero-lede">
-        Kamala Constructions is a Mangalore based civil contracting firm. We execute road works, pipelines, drainage, sewage treatment plants and renovations as a subcontractor to leading construction companies working across Dakshina Kannada.
+        Kamala Constructions is a Mangalore based civil contracting firm delivering road works, pipelines, drainage, sewage treatment plants and renovation projects across Dakshina Kannada. We work with government bodies, private clients, and as a trusted partner to leading construction companies in the region.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">
@@ -496,74 +471,6 @@ section { padding: 6.5rem var(--gutter); position: relative; }
         <a href="#contact" class="btn btn-outline">Get in touch</a>
       </div>
     </div>
-
-    <!-- ROLLING BANNER -->
-    <aside class="banner" id="banner">
-      <div class="banner-counter" id="bannerCounter">01 of 06</div>
-
-      <div class="banner-dots">
-        <button class="banner-dot is-active" data-target="1" aria-label="Slide 1"></button>
-        <button class="banner-dot" data-target="2" aria-label="Slide 2"></button>
-        <button class="banner-dot" data-target="3" aria-label="Slide 3"></button>
-        <button class="banner-dot" data-target="4" aria-label="Slide 4"></button>
-        <button class="banner-dot" data-target="5" aria-label="Slide 5"></button>
-        <button class="banner-dot" data-target="6" aria-label="Slide 6"></button>
-      </div>
-
-      <div class="banner-slide is-active" data-slide="1">
-        <img src="images/project-smartcity.jpg" alt="Smart City Waterfront" onerror="this.remove()">
-        <div class="caption">
-          <span class="banner-tag">Smart City</span>
-          <h4>Smart City Waterfront Promenade</h4>
-          <div class="banner-meta">Mangalore Smart City Mission</div>
-        </div>
-      </div>
-
-      <div class="banner-slide" data-slide="2">
-        <img src="images/project-mvs.jpg" alt="Multi Village Pipeline" onerror="this.remove()">
-        <div class="caption">
-          <span class="banner-tag">Government</span>
-          <h4>Multi Village Pipeline</h4>
-          <div class="banner-meta">Puttur, Moodabidre, Belthangady</div>
-        </div>
-      </div>
-
-      <div class="banner-slide" data-slide="3">
-        <img src="images/project-stp-kateel.jpg" alt="STP Tank Kateel" onerror="this.remove()">
-        <div class="caption">
-          <span class="banner-tag">300 KLD</span>
-          <h4>STP Tank, Kateel Temple</h4>
-          <div class="banner-meta">Kateel Durgaparameshwari Temple</div>
-        </div>
-      </div>
-
-      <div class="banner-slide" data-slide="4">
-        <img src="images/project-mulki.jpg" alt="Lokamukhi Karyalaya Mulki" onerror="this.remove()">
-        <div class="caption">
-          <span class="banner-tag">Ongoing</span>
-          <h4>Lokamukhi Karyalaya</h4>
-          <div class="banner-meta">Community Hall, Mulki</div>
-        </div>
-      </div>
-
-      <div class="banner-slide" data-slide="5">
-        <img src="images/project-annachatra.jpg" alt="Retaining Wall at Kateel" onerror="this.remove()">
-        <div class="caption">
-          <span class="banner-tag">Structural</span>
-          <h4>Retaining Wall, Annachatra</h4>
-          <div class="banner-meta">Kateel Temple</div>
-        </div>
-      </div>
-
-      <div class="banner-slide" data-slide="6">
-        <img src="images/project-mugrody.jpg" alt="Mugrody Drainage and Road" onerror="this.remove()">
-        <div class="caption">
-          <span class="banner-tag">Community</span>
-          <h4>Mugrody Drainage and Road</h4>
-          <div class="banner-meta">Village Infrastructure</div>
-        </div>
-      </div>
-    </aside>
   </div>
 </section>
 
@@ -572,14 +479,14 @@ section { padding: 6.5rem var(--gutter); position: relative; }
     <div class="section-header">
       <span class="eyebrow">About Us</span>
       <h2>We take the time to <em>build it right.</em></h2>
-      <p>We are a Mangalore based civil contracting firm, working as a subcontractor on public and private projects across the coastal region.</p>
+      <p>We are a Mangalore based civil contracting firm delivering work on public, private and collaborative projects across the coastal region.</p>
     </div>
 
     <div class="about-layout">
       <div class="about-text">
         <h3>Rooted in the coast. Built on <em>trust.</em></h3>
         <p>
-          <strong>Kamala Constructions</strong> has been serving Dakshina Kannada since 2021. All of our work is carried out on a subcontracting basis for established construction companies. This lets us focus entirely on execution, which is what we do best.
+          <strong>Kamala Constructions</strong> has been serving Dakshina Kannada since 2021. We take on direct contracts as well as specialist civil scope for established construction firms, which gives us a broad range of on-ground experience and a steady focus on execution.
         </p>
         <p>
           We have delivered scope on Smart City walkways in Mangalore, Multi Village water supply pipelines across three taluks, sewage treatment plants and retaining walls at Kateel temple, foundation works at Kalasa, and a full residential renovation. Each job is handled with the same care, whether it is a 300 KLD STP or a community road.
@@ -673,7 +580,7 @@ section { padding: 6.5rem var(--gutter); position: relative; }
   <div class="section-inner">
     <div class="section-header">
       <span class="eyebrow">Our Work</span>
-      <h2>Twelve projects delivered across <em>Dakshina Kannada.</em></h2>
+      <h2>Projects delivered across <em>Dakshina Kannada.</em></h2>
       <p>A quiet portfolio of civil work executed for established contractors. Temple infrastructure, government schemes, community roads and home renovations.</p>
     </div>
 
@@ -805,7 +712,7 @@ section { padding: 6.5rem var(--gutter); position: relative; }
     <div class="section-header">
       <span class="eyebrow">Our Clients</span>
       <h2>The contractors who <em>trust us on site.</em></h2>
-      <p>All of our work is carried out as a subcontractor. We are proud to work with established construction firms in the region, delivering our scope with care and consistency.</p>
+      <p>Alongside our direct contracts, we work closely with established construction firms in the region, handling specialist civil scope and delivering it with care and consistency.</p>
     </div>
 
     <div class="clients-grid">
@@ -947,65 +854,8 @@ for (var i = 0; i < filterBtns.length; i++) {
 }
 
 // ============================================
-// ROLLING BANNER
+// ROLLING BANNER REMOVED
 // ============================================
-(function() {
-  var slides = document.querySelectorAll('.banner-slide');
-  var dots = document.querySelectorAll('.banner-dot');
-  var counter = document.getElementById('bannerCounter');
-  var banner = document.getElementById('banner');
-
-  if (!slides.length || !dots.length) return;
-
-  var current = 0;
-  var total = slides.length;
-  var timer = null;
-
-  function pad(n) { return n < 10 ? '0' + n : '' + n; }
-
-  function setActive(i) {
-    slides[current].classList.remove('is-active');
-    dots[current].classList.remove('is-active');
-    current = i;
-    slides[current].classList.add('is-active');
-    dots[current].classList.add('is-active');
-    if (counter) {
-      counter.textContent = pad(current + 1) + ' of ' + pad(total);
-    }
-  }
-
-  function nextSlide() {
-    setActive((current + 1) % total);
-  }
-
-  function startTimer() {
-    stopTimer();
-    timer = setInterval(nextSlide, 4000);
-  }
-
-  function stopTimer() {
-    if (timer) {
-      clearInterval(timer);
-      timer = null;
-    }
-  }
-
-  for (var i = 0; i < dots.length; i++) {
-    (function(idx) {
-      dots[idx].addEventListener('click', function() {
-        setActive(idx);
-        startTimer();
-      });
-    })(i);
-  }
-
-  if (banner) {
-    banner.addEventListener('mouseenter', stopTimer);
-    banner.addEventListener('mouseleave', startTimer);
-  }
-
-  startTimer();
-})();
 </script>
 
 </body>
